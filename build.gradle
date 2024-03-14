@@ -8,4 +8,8 @@ repositories {
 dependencies {
 }
 
-manifest.mainAttributes("Main-Class" : "de.lassitu.JavaProxyCheck")
+jar {
+    manifest {
+        attributes["Main-Class"] = "de.lassitu.JavaProxyCheck"
+    }
+}
