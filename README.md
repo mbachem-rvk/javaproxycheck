@@ -36,6 +36,22 @@ http://www.example.com                   [DIRECT]
 https://secure.example.com               [HTTP @ proxy.example.com:3128]
 ```
 
+Test Proxy with download
+
+```
+  java \
+    -Dhttps.proxyHost=squid.intern.test.de -Dhttps.proxyPort=3128 \
+    -Dhttps.proxyUser=proxy-username \
+    -Dhttps.proxyPassword=proxy-password \
+    -jar ./build/libs/javaproxycheck.jar \
+    "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/gbfs.json" \
+    --download
+
+  https://gbfs.nextbike.net/maps/gbfs/v2/n [HTTP @ squid.intern.test.de/<unresolved>:3128]
+
+  Response Code: 200
+  {"last_updated":1773049771,"ttl":60,"data":{"de":{"feeds":[{"name":"system_information","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/de/system_information.json"},{"name":"vehicle_types","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/de/vehicle_types.json"},{"name":"station_information","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/de/station_information.json"},{"name":"station_status","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/de/station_status.json"},{"name":"free_bike_status","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/de/free_bike_status.json"},{"name":"system_hours","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/de/system_hours.json"},{"name":"system_regions","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/de/system_regions.json"},{"name":"system_pricing_plans","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/de/system_pricing_plans.json"}]},"en":{"feeds":[{"name":"system_information","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/en/system_information.json"},{"name":"vehicle_types","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/en/vehicle_types.json"},{"name":"station_information","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/en/station_information.json"},{"name":"station_status","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/en/station_status.json"},{"name":"free_bike_status","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/en/free_bike_status.json"},{"name":"system_hours","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/en/system_hours.json"},{"name":"system_regions","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/en/system_regions.json"},{"name":"system_pricing_plans","url":"https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/en/system_pricing_plans.json"}]}},"version":"2.3"}
+```
 
 ## Java Proxy Settings
 
